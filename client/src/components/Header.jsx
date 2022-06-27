@@ -42,10 +42,10 @@ const Header = (props) => {
             </Link>
           </div>
           <div className='nav' id="fruit">
-            <div className="accordian horizontal">
-              <img id="strawberry"src={strawberry} alt='strawberry' onClick={()=> setPalette('navBarRed')}></img>
-              <img id="pear" src={pear} alt='pear' onClick={()=> setPalette('navBarGreen')}></img>
-              <img id="orange" src={orange} alt='orange' onClick={()=> setPalette('navBarOrange')}></img>
+            <div className="accordian">
+              <img id="strawberry"src={strawberry} alt='strawberry' onClick={()=> setPalette('navBarRed')}/>
+              <img id="pear" src={pear} alt='pear' onClick={()=> setPalette('navBarGreen')}/>
+              <img id="orange" src={orange} alt='orange' onClick={()=> setPalette('navBarOrange')}/>
             </div>
           </div>
 

@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+*{
+  font-family: 'Viga', sans-serif;
+}
+.login-text{
+  font-family: 'Viga', sans-serif;
+}
+
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////// NAVIGATION BAR //////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////// */
@@ -27,6 +37,7 @@ nav {
   display: flex;
   margin-right: 40px;
 }
+
 
 #fruit img{
   width: 60%;
