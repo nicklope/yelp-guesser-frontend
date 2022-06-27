@@ -10,11 +10,13 @@ import orange from '../images/orange.png'
 
 
 const Header = (props) => {
-
+  
+  const [palette, setPalette] = useState('navBarRed')
+  
   return (
 
     <header>
-      
+
       <nav className={palette}>
         <div id="navleft-box">
           <div className="nav">

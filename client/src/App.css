@@ -1,1 +1,150 @@
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////// NAVIGATION BAR //////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-size: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 5vw;
+}
+.navBarRed{
+  background-color: #E71D36;
+}
+.navBarGreen{
+  background-color:#2EC4B6
+}
+.navBarOrange{
+  background-color: #FF9F1C;
+}
+#navleft-box{
+  display: flex;
+  margin-left: 40px;
+}
+#navright-box{
+  display: flex;
+  margin-right: 40px;
+}
+
+#fruit img{
+  width: 60%;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+
+#strawberry:hover{
+  margin-bottom: 0px;
+  cursor:pointer;
+  -webkit-filter: invert(14%) sepia(77%) saturate(5869%) hue-rotate(347deg) brightness(97%) contrast(87%);
+  filter: invert(14%) sepia(77%) saturate(5869%) hue-rotate(347deg) brightness(97%) contrast(87%);
+}
+#pear:hover{
+  cursor:pointer;
+  -webkit-filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+}
+#orange:hover{
+  cursor:pointer;
+  -webkit-filter: invert(68%) sepia(96%) saturate(1801%) hue-rotate(344deg) brightness(101%) contrast(101%);
+  filter: invert(68%) sepia(96%) saturate(1801%) hue-rotate(344deg) brightness(101%) contrast(101%);
+}
+
+.accordian{
+  padding-top: 10px;
+  width: 100px;
+  height: 130%;
+  overflow: hidden;
+  z-index: 100;
+  border-radius: 20px;
+  line-height: 100px;
+}
+
+.accordian:hover{
+  line-height: 50px;
+  animation: expand;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+  
+  100%  {
+    display:block;
+    background-color:black;
+    height:235px ;
+  }
+
+}
+
+#nav-logo{
+  height: 250%;
+}
+
+#nav-logo:hover{
+  height: 250%;
+  transform: translateY(10px)
+}
+
+#nav-gamelogo{
+  height: 100%;
+  margin: 10px 15px 0 15px;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+
+#nav-gamelogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(8px);
+}
+
+#nav-aboutlogo{
+  height: 100%;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+  margin: 10px 0px 0px 10px
+}
+
+#nav-aboutlogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(5px);
+}
+
+#nav-scorelogo{
+  height: 100%;
+  margin: 10px 15px 0 15px;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+
+#nav-scorelogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(5px);
+}
+
+#nav-username{
+  margin: 30px;
+}
+
+#logout{
+margin-top: 30px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #FDFFFC;
+  font-family: 'Orelega One', cursive;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+nav a:hover{
+  color:#FF9F1C;
+}
