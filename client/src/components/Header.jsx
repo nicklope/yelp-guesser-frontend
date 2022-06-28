@@ -25,7 +25,7 @@ const Header = (props) => {
             </Link>
           </div>
           <div className="nav">
-            <Link to="/quickplay">
+            <Link to="/selectgame">
               <img id="nav-gamelogo" src={playGameLogo} alt="yelp guesser" />
             </Link>
           </div>
