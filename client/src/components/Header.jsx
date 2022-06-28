@@ -41,14 +41,12 @@ const Header = (props) => {
               Login
             </Link>
           </div>
-          <div className='nav' id="fruit">
-            <div className="accordian">
-              <img id="strawberry"src={strawberry} alt='strawberry' onClick={()=> setPalette('navBarRed')}/>
-              <img id="pear" src={pear} alt='pear' onClick={()=> setPalette('navBarGreen')}/>
-              <img id="orange" src={orange} alt='orange' onClick={()=> setPalette('navBarOrange')}/>
-            </div>
+          
+          <div className="accordian">
+            <img id="strawberry"src={strawberry} alt='strawberry' onClick={()=> setPalette('navBarRed')}/>
+            <img id="pear" src={pear} alt='pear' onClick={()=> setPalette('navBarGreen')}/>
+            <img id="orange" src={orange} alt='orange' onClick={()=> setPalette('navBarOrange')}/>
           </div>
-
           <div className="nav">
             <Link to="/About">
               <img id="nav-aboutlogo" src={questionMark} alt="yelp guesser" />
