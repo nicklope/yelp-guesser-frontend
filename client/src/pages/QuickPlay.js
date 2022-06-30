@@ -6,10 +6,13 @@ import Checkbox from '@mui/material/Checkbox'
 import Lock from '@mui/icons-material/Lock'
 import LockOpen from '@mui/icons-material/LockOpen'
 import TextField from '@mui/material/TextField'
+import { Box, Stack } from '@mui/material'
 
 const QuickPlay = () => {
-  const [businesses, setBusinesses] = useState()
+  const [businesses, setBusinesses] = useState([])
   const [formValue, setFormValue] = useState(0)
+  const [countDown, setCountDown] = useState(3)
+  const [startState, setStart] = useState(0)
 
   const getBusinesses = async (zipCode) => {
     let res = await axios.get(`http://localhost:3001/businesses/${zipCode}`)
@@ -23,8 +26,8 @@ const QuickPlay = () => {
   }
 
   return (
-    <div>
-      <div className="start-state-box">
+    <Box>
+      <Stack className="start-state-box">
         <img src={quickPlay} />
         <TextField label="ZIP CODE" onChange={handleChange} />
         <Checkbox
@@ -37,7 +40,7 @@ const QuickPlay = () => {
           }}
         />
         <Button
-          // disabled={businesses.length > 1 ? false : true}
+          disabled={businesses.length > 1 ? false : true}
           id="next-button"
           // onClick={() => {
           //   setStart('Get Ready!')
@@ -48,8 +51,8 @@ const QuickPlay = () => {
         >
           START
         </Button>
-      </div>
-    </div>
+      </Stack>
+    </Box>
   )
 }
 
