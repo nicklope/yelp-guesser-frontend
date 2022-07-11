@@ -22,7 +22,7 @@ import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import lock from '../images/lock.png'
-import FinalScore from '../components/FinalScore'
+// import FinalScore from '../components/FinalScore'
 
 const QuickGame = (props) => {
   ////                   ////
@@ -30,8 +30,6 @@ const QuickGame = (props) => {
   ////                   ////
 
   const [businesses, setBusinesses] = useState([])
-
-  const [startState, setStart] = useState(0)
 
   const [review, setReview] = useState(undefined)
 
@@ -103,11 +101,11 @@ const QuickGame = (props) => {
     ///////////////////////////////////////
 
     setBusiness({
-      name: businesses[randomBusiness].name,
-      image: businesses[randomBusiness].image_url,
-      rating: businesses[randomBusiness].rating,
-      price: businesses[randomBusiness].price,
-      id: businesses[randomBusiness].id,
+      name: props.businesses[randomBusiness].name,
+      image: props.businesses[randomBusiness].image_url,
+      rating: props.businesses[randomBusiness].rating,
+      price: props.businesses[randomBusiness].price,
+      id: props.businesses[randomBusiness].id,
       review: '',
       reviewRating: ''
     })
@@ -117,13 +115,7 @@ const QuickGame = (props) => {
     let prevScore = score
 
     console.log('checking...')
-    console.log(
-      'player: ' + playerChoice,
-      'business: ' + businesses[randomBusiness].rating,
-      'prev score: ' + prevScore,
-      'price: ' + businesses[randomBusiness].price,
-      'flare: ' + flare
-    )
+
     if (
       playerChoice - business.rating === 0 ||
       business.rating - playerChoice === 0
@@ -191,34 +183,34 @@ const QuickGame = (props) => {
     }
     if (
       playerChoice === '$' &&
-      playerChoice === businesses[randomBusiness].price
+      playerChoice === props.businesses[randomBusiness].price
     ) {
       setScore(prevScore + 100)
       setFlare('CHEAP :)')
     }
     if (
       playerChoice === '$$' &&
-      playerChoice === businesses[randomBusiness].price
+      playerChoice === props.businesses[randomBusiness].price
     ) {
       setScore(prevScore + 100)
       setFlare('DOUBLE DOLLA :)')
     }
     if (
       playerChoice === '$$$' &&
-      playerChoice === businesses[randomBusiness].price
+      playerChoice === props.businesses[randomBusiness].price
     ) {
       setScore(prevScore + 100)
       setFlare('FANCY :)')
     }
     if (
       playerChoice === '$$$$' &&
-      playerChoice === businesses[randomBusiness].price
+      playerChoice === props.businesses[randomBusiness].price
     ) {
       setScore(prevScore + 100)
       setFlare('PRICEY :)')
     }
     if (
-      playerChoice !== businesses[randomBusiness].price &&
+      playerChoice !== props.businesses[randomBusiness].price &&
       playerChoice !== 1 &&
       playerChoice !== 1.5 &&
       playerChoice !== 2 &&
@@ -348,7 +340,7 @@ const QuickGame = (props) => {
     }
   }
   const setRound = async (start) => {
-    setStart(start)
+    props.setStart(start)
     setChoice(undefined)
     setPlayerChoice(undefined)
     setStarCount(noStars)
@@ -372,14 +364,18 @@ const QuickGame = (props) => {
     setTimeout(() => setRound(1), 3500)
   }
 
-
+useEffect(()=>{
+  toggleReviewBoolean(false)
+  setScore(0)
+  countDownTimer()
+},[])
 
 
   ////        ////
   //// Render ////
   ////        ////
   
-  switch (startState) {
+  switch (props.startState) {
     //  Case 0 //
 
     case 'Get Ready!':
@@ -810,17 +806,29 @@ const QuickGame = (props) => {
     case 13:
       return (
         <div>
-          <FinalScore
+          {/* <FinalScore
             score={score}
             setRound={setRound}
             setScore={setScore}
             setCountDown={setCountDown}
             user={props.user ? props.user : 'guest'}
             authenticated={props.authenticated ? props.authenticated : 'guest'}
-          />
+          /> */}
         </div>
       )
-
+      default:
+        return (
+          <div>
+            {/* <FinalScore
+              score={score}
+              setRound={setRound}
+              setScore={setScore}
+              setCountDown={setCountDown}
+              user={props.user ? props.user : 'guest'}
+              authenticated={props.authenticated ? props.authenticated : 'guest'}
+            /> */}
+          </div>
+        )
   }
 }
 export default QuickGame

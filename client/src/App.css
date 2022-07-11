@@ -349,3 +349,184 @@ nav a:hover{
   width: 80%;
   margin: 10px;
 }
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////// GAMEPLAY CSS //////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+
+#hms-title, #hmds-title{
+  display:flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+  font-size: 40px;
+}
+#star-container{
+  display:flex;
+  transform: translateY(5px);
+  position:relative;
+  
+}
+#dollar-container{
+  display:flex;
+  top: 20px;
+  position:relative;
+
+}
+#star-img{
+  width: 165px;
+  cursor: pointer;
+}
+#dollar-img{
+cursor: pointer;
+  width: 165px;
+
+}
+#getready-img{
+  margin-top: 100px;
+  height:300px;
+  justify-self: center;
+}
+
+
+.stars{
+  cursor: pointer;
+  height: 28px;
+  width: 15px;
+  margin:.6px;
+  padding: .1px;
+  display: flex;
+  flex-direction: row;
+  transform: translatey(-35px);
+
+}
+.dollars{
+  cursor: pointer;
+  height: 28px;
+  width: 15px;
+  margin:2.6px;
+  padding: .1px;
+  display: flex;
+  flex-direction: row;
+  transform: translatey(-50px);
+}
+
+#business-image{
+  max-height: 400px;
+  width: auto;
+}
+#flare{
+  
+  color:#E71D36;
+  font-size: 100px;
+  bottom: 250px;
+  z-index: -100;
+}
+.flareAnimationStop{
+  opacity: 0;
+  animation: none;
+  position: relative;
+  
+}
+
+.flareAnimationGo{
+  animation: flare 1.5s 1;
+  font-weight: bolder;
+  z-index: -100;
+  font-size:44px;
+  position: relative;
+
+}
+
+#dollar-img{
+  width: 80px;
+}
+
+#review{
+  font-size: 24px;
+}
+
+.star-button-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  margin: 0 auto;
+  padding: 10px;
+}
+.next-arrow{
+  height:50px;
+}
+.next-arrow:hover{
+  cursor: pointer;
+  transform: translateY(10px);
+  -webkit-filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  
+}
+#review-container{
+  display: inline-block;
+  
+}
+#review-full{
+  font-size: 30px;
+  text-shadow: 2px 2px #2EC4B6;
+  opacity: 0;
+  font-family: 'VT323', monospace;
+  text-align: center;
+
+  animation: appear 5s forwards;
+}
+#review-question{
+  opacity: 0;
+  font-size: 20px;
+  animation: appearquestion 6s forwards;
+}
+#next-button-review{
+  opacity: 0;
+
+  animation: appearquestion 9s forwards;
+}
+.start-state-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 30vw;
+  
+}
+#lock-button{
+  width: 30%;
+  height: auto;
+  margin: 10px;
+}
+#zip{
+  width: 80%;
+  margin: 10px;
+}
+#globe-logo{
+  height: 300px;
+  width: 300px;
+  margin: 30px;
+}
+@keyframes appear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes appearquestion {
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes flare {
+  99%  {
+    transform: translatey(-100px);
+  }
+  100%{
+    opacity: 0;
+  }
+}
