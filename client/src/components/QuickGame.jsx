@@ -23,15 +23,15 @@ import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import lock from '../images/lock.png'
-// import FinalScore from '../components/FinalScore'
+
 
 const QuickGame = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
 
-  const [businesses, setBusinesses] = useState([])
 
+  
   const [review, setReview] = useState(undefined)
 
   const [reviewRating, setReviewRating] = useState(0)
@@ -40,7 +40,6 @@ const QuickGame = (props) => {
 
   const [starCount, setStarCount] = useState(noStars)
 
-  const [dollarCount, setDollarCount] = useState(noDollars)
 
   const [choice, setChoice] = useState(undefined)
 
@@ -85,10 +84,6 @@ const QuickGame = (props) => {
     setReviewRating(res.data.reviews.reviews[random].rating)
     toggleReviewBoolean(true)
   }
-
-  ////////////////////////////////////////
-  /////// Business state set here ///////
-  ///////////////////////////////////////
 
   const setRoundBusiness = async () => {
     setBusiness({
@@ -799,14 +794,16 @@ useEffect(()=>{
     case 13:
       return (
         <div>
-          {/* <FinalScore
+          
+          <FinalScore
             score={score}
             setRound={setRound}
             setScore={setScore}
             setCountDown={setCountDown}
+            businessStore={businessStore}
             user={props.user ? props.user : 'guest'}
             authenticated={props.authenticated ? props.authenticated : 'guest'}
-          /> */}
+          />
         </div>
       )
       default:
