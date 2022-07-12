@@ -380,7 +380,7 @@ useEffect(()=>{
 
     case 'Get Ready!':
       return (
-        <div>
+        <div id="get-ready">
           <img id="getready-img" src={getReady} />
           <h1>{countDown}</h1>
         </div>
@@ -525,14 +525,13 @@ useEffect(()=>{
       return (
         <div>
           <div className="star-button-box">
-            <HowManyDollarSigns
+          <HowManyStars
               choice={choice}
               setChoice={setChoice}
+              starCount={starCount}
+              setStarCount={setStarCount}
               business={business}
-              dollarCount={dollarCount}
-              setDollarCount={setDollarCount}
               playerChoiceConverter={playerChoiceConverter}
-              setRoundBusiness={setRoundBusiness}
             />
 
             <h1>{score}</h1>

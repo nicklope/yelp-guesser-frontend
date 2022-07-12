@@ -56,13 +56,13 @@ const QuickPlay = () => {
       )
     case 'on':
       return (
-        <div>
+        <Stack sx={{ display: 'flex', alignItems: 'center' }}>
           <QuickGame
             startState={startState}
             setStart={setStart}
             businesses={businesses}
           />
-        </div>
+        </Stack>
       )
   }
 }

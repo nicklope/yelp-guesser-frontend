@@ -23,7 +23,7 @@ const HowManyStars = (props) => {
 
 
   return( 
-  <div>
+  <div id='hms-container'>
     <img id="business-image" src={props.business.image}/>
     <div id='hms-title'>
       How many stars does {props.business.name} have?

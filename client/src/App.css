@@ -414,13 +414,20 @@ cursor: pointer;
 #business-image{
   max-height: 400px;
   width: auto;
+  
+}
+#hms-container{
+  text-align: center;
 }
 #flare{
-  
+  text-align: center;
   color:#E71D36;
   font-size: 100px;
   bottom: 250px;
   z-index: -100;
+}
+#get-ready{
+  text-align: center;
 }
 .flareAnimationStop{
   opacity: 0;
