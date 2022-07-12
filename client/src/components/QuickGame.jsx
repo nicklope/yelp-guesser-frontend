@@ -3,6 +3,7 @@ import axios from 'axios'
 import HowManyStars from './HowManyStars'
 import HowManyDollarSigns from './HowManyDollarSigns'
 import HowManyStarsReview from './HowManyStarsReview'
+import FinalScore from './FinalScore'
 import noStars from '../images/extra_large_0.png'
 import oneStar from '../images/extra_large_1.png'
 import oneHalfStar from '../images/extra_large_1_half.png'
@@ -64,25 +65,15 @@ const QuickGame = (props) => {
     reviewScore: ''
   })
 
-  const [formValue, setFormValue] = useState({
-    zipCode: ''
-  })
 
   const [countDown, setCountDown] = useState(3)
 
-  const [businessStore, setBusinessStore] = useState({})
+  const [businessStore, setBusinessStore] = useState([])
 
   ////           ////
   //// Functions ////
   ////           ////
 
-  const getBusinesses = async (zipCode) => {
-    let res = await axios.get(
-      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
-    )
-    console.log(res.data.businesses)
-    setBusinesses(res.data.businesses)
-  }
 
   const getBusinessReview = async (id) => {
     let res = await axios.get(
@@ -95,21 +86,25 @@ const QuickGame = (props) => {
     toggleReviewBoolean(true)
   }
 
-  const setRoundBusiness = async () => {
-    ////////////////////////////////////////
-    /////// business state set here ///////
-    ///////////////////////////////////////
+  ////////////////////////////////////////
+  /////// Business state set here ///////
+  ///////////////////////////////////////
 
+  const setRoundBusiness = async () => {
     setBusiness({
       name: props.businesses[randomBusiness].name,
       image: props.businesses[randomBusiness].image_url,
       rating: props.businesses[randomBusiness].rating,
       price: props.businesses[randomBusiness].price,
       id: props.businesses[randomBusiness].id,
+      url: props.businesses[randomBusiness].url,
       review: '',
       reviewRating: ''
     })
+    setBusinessStore([...businessStore, business])
+    console.log(businessStore)
   }
+    
 
   const checkScore = (playerChoice) => {
     let prevScore = score
@@ -700,14 +695,13 @@ useEffect(()=>{
       return (
         <div>
           <div className="star-button-box">
-            <HowManyDollarSigns
+          <HowManyStars
               choice={choice}
               setChoice={setChoice}
+              starCount={starCount}
+              setStarCount={setStarCount}
               business={business}
-              dollarCount={dollarCount}
-              setDollarCount={setDollarCount}
               playerChoiceConverter={playerChoiceConverter}
-              setRoundBusiness={setRoundBusiness}
             />
 
             <h1>{score}</h1>

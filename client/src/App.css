@@ -416,7 +416,7 @@ cursor: pointer;
   width: auto;
   
 }
-#hms-container{
+#hms-container, #hmsr-container{
   text-align: center;
 }
 #flare{
@@ -476,10 +476,10 @@ cursor: pointer;
   
 }
 #review-full{
-  font-size: 30px;
-  text-shadow: 2px 2px #2EC4B6;
+  font-size: 28px;
+  
   opacity: 0;
-  font-family: 'VT323', monospace;
+
   text-align: center;
 
   animation: appear 5s forwards;

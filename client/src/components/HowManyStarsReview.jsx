@@ -26,7 +26,7 @@ useEffect(()=>{
   
 
   return( 
-  <div>
+  <div id='hmsr-container'>
     <img id="business-image" src={props.business.image}/>
     <div id='hms-title'>
       <div id='review-container'><h1 id="review-full">{'"'+props.review+'"'}</h1></div>
