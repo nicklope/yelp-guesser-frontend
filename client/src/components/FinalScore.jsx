@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react"
-import { Stack } from "@mui/material"
-import { useNavigate } from "react-router-dom"
+
 
 const FinalScore = (props) => {
-  const navigate = useNavigate()
+
   
   return (
-    <div>
-      {props.businessStore.map((business)=> (
-        <div>
-          <a href={business.url}>
-        <img src={business.image} />
-        </a>
-        <h1>{business.name}</h1>
-        <h2>{business.rating}</h2>
-        </div>
-      ))}
+    <div id="finalscore-page">
+      <h1>{props.score}</h1>
+      <div id="business-card-container">
+        {props.businessStore.map((business)=> (
+          <div id="business-card">
+            <a href={business.url}>
+          <img src={business.image} id="business-card-image"/>
+          </a>
+          <h1 id="businesss-card-title">{business.name}</h1>
+          
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

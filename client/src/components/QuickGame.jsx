@@ -800,7 +800,7 @@ useEffect(()=>{
             setRound={setRound}
             setScore={setScore}
             setCountDown={setCountDown}
-            businessStore={businessStore}
+            businessStore={businessStore.slice(1, businessStore.length)}
             user={props.user ? props.user : 'guest'}
             authenticated={props.authenticated ? props.authenticated : 'guest'}
           />
