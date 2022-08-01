@@ -7,10 +7,12 @@ import questionMark from '../images/questionmark.png'
 import strawberry from '../images/strawberry.png'
 import pear from '../images/pear.png'
 import orange from '../images/orange.png'
+import { Modal } from '@mui/material'
 
 
 const Header = (props) => {
   
+  const [modalOpen, setModalOpen] = useState(false)
   const [palette, setPalette] = useState('navBarRed')
   
   return (
@@ -54,7 +56,7 @@ const Header = (props) => {
           </div>
         </div>
       </nav>
- 
+      <Modal open={modalOpen}></Modal>
     </header>
   )
 }
